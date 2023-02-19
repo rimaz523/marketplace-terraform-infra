@@ -7,6 +7,14 @@ terraform {
       version = ">=3.43.0"
     }
   }
+
+  backend "azurerm" {
+    resource_group_name  = "marketplace-admin-rg"
+    storage_account_name = "rmzmarketadmin"
+    container_name       = "tfstate"
+    key                  = "dev.terraform.tfstate"
+  }
+
 }
 
 provider "azurerm" {
