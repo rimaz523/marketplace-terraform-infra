@@ -10,7 +10,7 @@ terraform {
 
   backend "azurerm" {
     resource_group_name  = "marketplace-admin-rg"
-    storage_account_name = "rmzmarketadmin"
+    storage_account_name = "mktadminstore"
     container_name       = "tfstate"
     key                  = "dev.terraform.tfstate"
   }
