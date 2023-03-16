@@ -43,5 +43,12 @@ steps:
     environmentServiceName: '${{ parameters.serviceConnection }}'
     runAzLogin: true
     workingDirectory: '$(Pipeline.Workspace)/drop/terraform/'
-    publishPlanResults: 'terraform.tf'
+    publishPlanResults: 'terraform..tfplan'
 
+- task: TerraformCLI@0
+  displayName: 'Terraform Apply'
+  inputs:
+    command: 'apply'
+    environmentServiceName: '${{ parameters.serviceConnection }}'
+    runAzLogin: true
+    workingDirectory: '$(Pipeline.Workspace)/drop/terraform/'
