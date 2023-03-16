@@ -10,6 +10,7 @@ steps:
   inputs:
     targetFiles: |
       $(Pipeline.Workspace)/drop/**/variables.tf
+      $(Pipeline.Workspace)/drop/**/providers.tf
     verbosity: detailed
     tokenPrefix: '#{'
     tokenSuffix: '}#'
@@ -18,3 +19,20 @@ steps:
   displayName: "Install Terraform Latest"
   inputs:
     terraformVersion: latest
+
+- task: AzureCLI@2
+  displayName: "Set Storage Access key"
+  inputs:
+    azureSubscription: '${{ parameters.serviceConnection }}'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      $env:ARM_ACCESS_KEY = $(az storage account keys list -g marketplace-admin-rg -n mktadminstore --query [0].value -o tsv)
+
+- task: TerraformCLI@0
+  displayName: 'Initialize Terraform'
+  inputs:
+    command: 'init'
+    workingDirectory: '$(Pipeline.Workspace)/drop/terraform/'
+    backendServiceArm: '${{ parameters.serviceConnection }}'
+
