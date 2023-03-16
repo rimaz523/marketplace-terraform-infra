@@ -40,5 +40,6 @@ steps:
   displayName: 'Terraform Plan'
   inputs:
     command: 'plan'
+    workingDirectory: '$(Pipeline.Workspace)/drop/terraform/'
     publishPlanResults: 'terraform.tf'
 
