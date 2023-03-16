@@ -1,0 +1,17 @@
+parameters:
+- name : serviceConnection
+
+steps:
+- task: qetza.replacetokens.replacetokens-task.replacetokens@5
+  displayName: 'Replace tokens'
+  inputs:
+    targetFiles: |
+      **/variables.tf
+    verbosity: detailed
+    tokenPrefix: '#{'
+    tokenSuffix: '}#'
+
+- task: TerraformInstaller
+  displayName: "Install Terraform Latest"
+  inputs:
+    terraformVersion: latest

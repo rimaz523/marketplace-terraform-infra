@@ -4,7 +4,11 @@ trigger:
       - master
 
 variables:
-  - template: variables/build.yml
+  - template: 'variables/service-connections.yml'
+  - template: 'variables/build.yml'
+
+pool:
+  vmImage: '$(buildVmImage)'
 
 stages:
   - stage: 'Build'
@@ -12,9 +16,6 @@ stages:
     jobs:
       - job: 'Build'
         displayName: 'Build job'
-        pool:
-          vmImage: '$(buildVmImage)'
-
         steps:
           - task: CopyFiles@2
             displayName: 'Copy Terraform code'
@@ -28,3 +29,20 @@ stages:
             displayName: 'Publish Terraform Code: drop'
             inputs:
               pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+
+  - stage: 'Dev Deploy'
+    displayName: 'Deploy to Dev Environment'
+    dependsOn: 'Build'
+    variables:
+    - template: 'variables/dev.yml'
+    jobs:
+      - deployment: 'Deploy'
+        environment: 'DEV'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+                - template: './azure-deploy-step.yml'
+                  parameters:
+                    serviceConnection: $(azure-connection)
