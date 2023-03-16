@@ -2,11 +2,14 @@ parameters:
 - name : serviceConnection
 
 steps:
+- download: current
+  artifact: drop
+
 - task: qetza.replacetokens.replacetokens-task.replacetokens@5
   displayName: 'Replace tokens'
   inputs:
     targetFiles: |
-      **/variables.tf
+      $(Pipeline.Workspace)/drop/**/variables.tf
     verbosity: detailed
     tokenPrefix: '#{'
     tokenSuffix: '}#'
