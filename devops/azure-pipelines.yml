@@ -30,7 +30,7 @@ stages:
             inputs:
               pathtoPublish: '$(Build.ArtifactStagingDirectory)'
 
-  - stage: 'Dev Deploy'
+  - stage: 'Dev_Deploy'
     displayName: 'Deploy to Dev Environment'
     dependsOn: 'Build'
     variables:
