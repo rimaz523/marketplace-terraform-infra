@@ -1,5 +1,7 @@
 variables:
-- name: resource-group
-  value: marketplace-dev-rg
+- name: environment
+  value: dev
+- name: project
+  value: marketplace
 - name: terraform-state-key
   value: 'dev.terraform.tfstate'

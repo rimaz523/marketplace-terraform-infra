@@ -1,1 +1,2 @@
-resource_group_name = "marketplace-dev-rg"
+environment = "dev"
+project     = "marketplace"
