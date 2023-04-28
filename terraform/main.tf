@@ -17,5 +17,7 @@ resource "azurerm_windows_web_app" "win_webapp" {
   location            = azurerm_service_plan.win_asp.location
   service_plan_id     = azurerm_service_plan.win_asp.id
 
-  site_config {}
+  site_config {
+    always_on = false
+  }
 }
