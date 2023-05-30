@@ -11,8 +11,8 @@ resource "azurerm_service_plan" "asp" {
   os_type             = var.app_service_os
 }
 
-resource "azurerm_linux_web_app" "dotnet_webapp" {
-  name                = "${var.project}-${var.environment}-dotnet-webapp"
+resource "azurerm_linux_web_app" "dotnet_api" {
+  name                = "${var.project}-${var.environment}-dotnet-api"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_service_plan.asp.location
   service_plan_id     = azurerm_service_plan.asp.id
@@ -20,6 +20,10 @@ resource "azurerm_linux_web_app" "dotnet_webapp" {
 
   site_config {
     always_on = true
+
+    application_stack {
+      dotnet_version = "6.0"
+    }
   }
 }
 
@@ -32,6 +36,10 @@ resource "azurerm_linux_web_app" "react_webapp" {
 
   site_config {
     always_on = true
+
+    application_stack {
+      node_version = "18-lts"
+    }
   }
 }
 
@@ -44,5 +52,9 @@ resource "azurerm_linux_web_app" "vue_webapp" {
 
   site_config {
     always_on = true
+
+    application_stack {
+      node_version = "18-lts"
+    }
   }
 }
