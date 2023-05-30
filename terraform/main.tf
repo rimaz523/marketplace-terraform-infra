@@ -22,3 +22,27 @@ resource "azurerm_linux_web_app" "dotnet_webapp" {
     always_on = true
   }
 }
+
+resource "azurerm_linux_web_app" "react_webapp" {
+  name                = "${var.project}-${var.environment}-react-webapp"
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_service_plan.asp.location
+  service_plan_id     = azurerm_service_plan.asp.id
+  https_only          = true
+
+  site_config {
+    always_on = true
+  }
+}
+
+resource "azurerm_linux_web_app" "vue_webapp" {
+  name                = "${var.project}-${var.environment}-vue-webapp"
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_service_plan.asp.location
+  service_plan_id     = azurerm_service_plan.asp.id
+  https_only          = true
+
+  site_config {
+    always_on = true
+  }
+}
