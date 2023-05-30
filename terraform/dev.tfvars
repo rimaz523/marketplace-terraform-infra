@@ -1,2 +1,5 @@
-environment = "dev"
-project     = "marketplace"
+resource_group_location = "australiaeast"
+environment             = "dev"
+project                 = "marketplace"
+app_service_sku         = "B1"
+app_service_os          = "Linux"

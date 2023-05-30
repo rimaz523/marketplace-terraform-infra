@@ -3,21 +3,22 @@ resource "azurerm_resource_group" "rg" {
   name     = "${var.project}-${var.environment}-rg"
 }
 
-resource "azurerm_service_plan" "win_asp" {
-  name                = "${var.project}-${var.environment}-win-asp"
+resource "azurerm_service_plan" "asp" {
+  name                = "${var.project}-${var.environment}-asp"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
-  sku_name            = "F1"
-  os_type             = "Windows"
+  sku_name            = var.app_service_sku
+  os_type             = var.app_service_os
 }
 
-resource "azurerm_windows_web_app" "win_webapp" {
-  name                = "${var.project}-${var.environment}-win-webapp"
+resource "azurerm_linux_web_app" "dotnet_webapp" {
+  name                = "${var.project}-${var.environment}-dotnet-webapp"
   resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_service_plan.win_asp.location
-  service_plan_id     = azurerm_service_plan.win_asp.id
+  location            = azurerm_service_plan.asp.location
+  service_plan_id     = azurerm_service_plan.asp.id
+  https_only          = true
 
   site_config {
-    always_on = false
+    always_on = true
   }
 }
