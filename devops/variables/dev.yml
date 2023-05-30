@@ -1,7 +1,13 @@
 variables:
+- name: terraform-state-key
+  value: 'dev.terraform.tfstate'
+- name: resource_group_location
+  value: australiaeast
 - name: environment
   value: dev
 - name: project
   value: marketplace
-- name: terraform-state-key
-  value: 'dev.terraform.tfstate'
+- name: app_service_sku
+  value: B1
+- name: app_service_os
+  value: Linux
