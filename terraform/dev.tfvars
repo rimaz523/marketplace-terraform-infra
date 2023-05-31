@@ -1,5 +1,21 @@
-resource_group_location = "australiaeast"
-environment             = "dev"
-project                 = "marketplace"
-app_service_sku         = "B1"
-app_service_os          = "Linux"
+project     = "marketplace"
+environment = "dev"
+
+resource_groups = {
+  "app" = {
+    location = "australiaeast"
+  },
+  "data" = {
+    location = "australiaeast"
+  },
+  "common" = {
+    location = "australiaeast"
+  }
+}
+
+service_plans = {
+  "asp" = {
+    sku = "B1"
+    os  = "Linux"
+  }
+}
