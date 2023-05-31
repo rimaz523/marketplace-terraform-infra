@@ -1,6 +1,6 @@
-variable "resource_group_location" {
-  default     = "#{resource_group_location}#"
-  description = "Location of the resource group."
+variable "project" {
+  default     = "#{project}#"
+  description = "Name of the project."
 }
 
 variable "environment" {
@@ -8,17 +8,56 @@ variable "environment" {
   description = "The deployed environment."
 }
 
-variable "project" {
-  default     = "#{project}#"
-  description = "Name of the project."
+variable "resource_groups" {
+  description = "create resource groups in the project's environment"
+  type = map(object({
+    location = string
+  }))
+  default = {
+    "app" = {
+      location = "#{resource_group_location}#"
+    },
+    "data" = {
+      location = "#{resource_group_location}#"
+    },
+    "common" = {
+      location = "#{resource_group_location}#"
+    }
+  }
 }
 
-variable "app_service_sku" {
-  default     = "#{app_service_sku}#"
-  description = "SKU for the app service plan."
+variable "service_plans" {
+  description = "create app service plans"
+  type = map(object({
+    sku = string
+    os  = string
+  }))
+  default = {
+    "asp" = {
+      sku = "#{app_service_sku}#"
+      os  = "#{app_service_os}#"
+    }
+  }
 }
 
-variable "app_service_os" {
-  default     = "#{app_service_os}#"
-  description = "Operating system for the app service plan."
+variable "linux_webapps" {
+  description = "create linux web apps for deploying the marketplace api and frontends"
+  type = map(object({
+    stack         = string
+    stack_version = string
+  }))
+  default = {
+    "api" = {
+      stack         = "dotnet"
+      stack_version = "6.0"
+    },
+    "react" = {
+      stack         = "node"
+      stack_version = "18-lts"
+    },
+    "vue" = {
+      stack         = "node"
+      stack_version = "18-lts"
+    }
+  }
 }
