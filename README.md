@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/rimazmohommed523/Marketplace/_apis/build/status%2Frimaz523.marketplace-terraform-infra?branchName=master)](https://dev.azure.com/rimazmohommed523/Marketplace/_build/latest?definitionId=16&branchName=master)
+
 # Online Marketplace Platform Infrastructure Code
 
 ## Description
