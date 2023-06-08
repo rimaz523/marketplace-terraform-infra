@@ -1,4 +1,4 @@
-module "apim" {
+module "api_management" {
   source   = "./modules/integration/api_management"
   for_each = var.apims
 
