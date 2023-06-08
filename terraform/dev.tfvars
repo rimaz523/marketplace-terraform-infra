@@ -21,7 +21,7 @@ service_plans = {
 }
 
 apims = {
-  "market" = {
+  "backend" = {
     company = "MarketAgora"
     email   = "rimazmohommed523@gmail.com"
     sku     = "Consumption_0"

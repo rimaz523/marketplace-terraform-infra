@@ -16,4 +16,4 @@ variables:
 - name: company_email
   value: rimazmohommed523@gmail.com
 - name: apim_sku
-  value: Consumption
+  value: Consumption_0
