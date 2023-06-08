@@ -25,7 +25,7 @@ This code creates the infrastructure of a one-stop online marketplace site using
 - Run `/scripts/set_access_key.ps1` to login to azure cli, select your subscription and then set your access_key to the tfstate backend stored in azure storage.
 - Change to the `/terraform` directory.
 - Run `terraform init -backend-config="key=dev.terraform.tfstate"`
-- Run `terraform plan -out terraform.tfplan` to see your planned changes
+- Run `terraform plan -out terraform.tfplan --var-file="dev.tfvars"` to see your planned changes
 - Run `terraform apply terraform.tfplan` to apply your changes to the cloud environment
 
 
