@@ -24,6 +24,6 @@ apims = {
   "market" = {
     company = "MarketAgora"
     email   = "rimazmohommed523@gmail.com"
-    sku     = "Consumption"
+    sku     = "Consumption_0"
   }
 }

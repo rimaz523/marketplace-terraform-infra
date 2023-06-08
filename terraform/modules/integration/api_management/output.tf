@@ -1,3 +1,3 @@
 output "id" {
-  value = api_management.apim.id
+  value = azurerm_api_management.apim.id
 }
