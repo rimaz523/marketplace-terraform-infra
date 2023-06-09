@@ -17,3 +17,5 @@ variables:
   value: rimazmohommed523@gmail.com
 - name: apim_sku
   value: Consumption_0
+- name: api_domain_url
+  value: "https://marketplace-dev-dotnet-api.azurewebsites.net"
