@@ -19,3 +19,11 @@ service_plans = {
     os  = "Linux"
   }
 }
+
+apims = {
+  "backend" = {
+    company = "MarketAgora"
+    email   = "rimazmohommed523@gmail.com"
+    sku     = "Consumption_0"
+  }
+}

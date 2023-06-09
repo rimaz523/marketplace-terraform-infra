@@ -11,3 +11,9 @@ variables:
   value: B1
 - name: app_service_os
   value: Linux
+- name: company_name
+  value: MarketAgora
+- name: company_email
+  value: rimazmohommed523@gmail.com
+- name: apim_sku
+  value: Consumption_0

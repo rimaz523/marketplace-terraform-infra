@@ -61,3 +61,19 @@ variable "linux_webapps" {
     }
   }
 }
+
+variable "apims" {
+  description = "create APIMs"
+  type = map(object({
+    company = string
+    email   = string
+    sku     = string
+  }))
+  default = {
+    "backend" = {
+      company = "#{company_name}#"
+      email   = "#{company_email}#"
+      sku     = "#{apim_sku}#"
+    }
+  }
+}
