@@ -13,11 +13,6 @@ variable "location" {
   type        = string
 }
 
-variable "environment" {
-  description = "The deployed environment."
-  type        = string
-}
-
 variable "project" {
   description = "Name of the project."
   type        = string
