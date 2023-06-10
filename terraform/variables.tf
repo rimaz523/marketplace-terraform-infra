@@ -82,7 +82,6 @@ variable "apis" {
   description = "create APIs"
   type = map(object({
     api_revision               = string
-    api_version                = string
     path                       = string
     service_url                = string
     swagger_json_relative_path = string
@@ -90,9 +89,8 @@ variable "apis" {
   }))
   default = {
     "Backend" = {
-      api_revision               = "1"
-      api_version                = "v1"
-      path                       = "api"
+      api_revision               = "v1"
+      path                       = "v1"
       service_url                = "#{api_domain_url}#"
       swagger_json_relative_path = "/swagger/v1/swagger.json"
       swagger_format             = "openapi+json-link"

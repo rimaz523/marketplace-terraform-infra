@@ -30,9 +30,8 @@ apims = {
 
 apis = {
   "Backend" = {
-    api_revision               = "1"
-    api_version                = "v1"
-    path                       = "api"
+    api_revision               = "v1"
+    path                       = "v1"
     swagger_json_relative_path = "/swagger/v1/swagger.json"
     swagger_format             = "openapi+json-link"
     service_url                = "https://marketplace-dev-dotnet-api.azurewebsites.net"

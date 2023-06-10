@@ -8,7 +8,6 @@ module "api_management_api" {
   environment                = var.environment
   api_management_name        = module.api_management["backend"].name
   api_revision               = each.value.api_revision
-  api_version                = each.value.api_version
   path                       = each.value.path
   service_url                = each.value.service_url
   swagger_json_relative_path = each.value.swagger_json_relative_path

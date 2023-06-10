@@ -23,11 +23,6 @@ variable "api_management_name" {
   type        = string
 }
 
-variable "api_version" {
-  description = "Version of the API."
-  type        = string
-}
-
 variable "api_revision" {
   description = "Revision of the API."
   type        = string
