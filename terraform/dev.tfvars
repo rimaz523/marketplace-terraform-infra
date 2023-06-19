@@ -20,6 +20,14 @@ service_plans = {
   }
 }
 
+ssl_certificates = {
+  "marketagora-ssl" = {
+    kv_name           = "marketplace-admin-kv"
+    kv_resource_group = "marketplace-admin-rg"
+    ssl_cert_name     = "marketagora-pfx-cert"
+  }
+}
+
 apims = {
   "backend" = {
     company = "MarketAgora"
