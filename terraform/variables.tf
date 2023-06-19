@@ -62,6 +62,53 @@ variable "linux_webapps" {
   }
 }
 
+variable "ssl_certificates" {
+  description = "get ssl certificates for the hosted web apps"
+  type = map(object({
+    kv_name           = string
+    kv_resource_group = string
+    ssl_cert_name     = string
+  }))
+  default = {
+    "marketagora-ssl" = {
+      kv_name           = "#{admin_key_vault}#"
+      kv_resource_group = "#{admin_resource_group}#"
+      ssl_cert_name     = "#{kv_ssl_cert_name}#"
+    }
+  }
+}
+
+variable "web_app_ssl_domains" {
+  description = "Custom domain and ssl bindings for the hosted web apps"
+  type = map(object({
+    web_app_key = string
+    ssl_state   = string
+  }))
+  default = {
+    "marketagora.com" = {
+      web_app_key = "react"
+      ssl_state   = "IpBasedEnabled"
+    },
+    "www.marketagora.com" = {
+      web_app_key = "react"
+      ssl_state   = "SniEnabled"
+    },
+    "react.marketagora.com" = {
+      web_app_key = "react"
+      ssl_state   = "SniEnabled"
+    },
+    "vue.marketagora.com" = {
+      web_app_key = "vue"
+      ssl_state   = "SniEnabled"
+    },
+    "api.marketagora.com" = {
+      web_app_key = "api"
+      ssl_state   = "SniEnabled"
+    }
+  }
+}
+
+
 variable "apims" {
   description = "create APIMs"
   type = map(object({
