@@ -40,4 +40,5 @@ resource "azurerm_api_management_subscription" "apim_product_subscription" {
   product_id          = azurerm_api_management_product.apim_product.id
   display_name        = "${var.project} ${var.name} ${var.environment} API"
   state               = "active"
+  allow_tracing       = false
 }
