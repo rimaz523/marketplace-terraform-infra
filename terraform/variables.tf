@@ -144,3 +144,31 @@ variable "apis" {
     }
   }
 }
+
+variable "laws" {
+  description = "create log analytics workspaces"
+  type = map(object({
+    retention_days = string
+    sku            = string
+  }))
+  default = {
+    "app" = {
+      retention_days = "90"
+      sku            = "PerGB2018"
+    }
+  }
+}
+
+variable "app_insights" {
+  description = "create application insights resources"
+  type = map(object({
+    retention_days   = string
+    application_type = string
+  }))
+  default = {
+    "app" = {
+      retention_days   = "90"
+      application_type = "web"
+    }
+  }
+}
