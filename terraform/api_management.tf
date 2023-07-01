@@ -5,6 +5,7 @@ module "api_management" {
   name                = each.key
   resource_group_name = module.resource_group["common"].name
   location            = module.resource_group["common"].location
+  environment         = var.environment
   project             = var.project
   sku                 = each.value.sku
   company_name        = each.value.company

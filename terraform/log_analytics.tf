@@ -4,6 +4,7 @@ module "log_analytics" {
 
   resource_group_name = module.resource_group["common"].name
   location            = module.resource_group["common"].location
+  environment         = var.environment
   name                = each.key
   sku                 = each.value.sku
   retention_days      = each.value.retention_days
