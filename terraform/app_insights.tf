@@ -4,6 +4,7 @@ module "app_insights" {
 
   resource_group_name = module.resource_group["common"].name
   location            = module.resource_group["common"].location
+  environment         = var.environment
   name                = each.key
   application_type    = each.value.application_type
   retention_days      = each.value.retention_days

@@ -8,6 +8,11 @@ variable "location" {
   type        = string
 }
 
+variable "environment" {
+  description = "The deployed environment."
+  type        = string
+}
+
 variable "name" {
   description = "Name of the app insights instance."
   type        = string
