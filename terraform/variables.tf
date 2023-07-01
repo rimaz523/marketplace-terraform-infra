@@ -172,3 +172,17 @@ variable "app_insights" {
     }
   }
 }
+
+variable "key_vaults" {
+  description = "create key vault resources"
+  type = map(object({
+    tenant_id = string
+    sku       = string
+  }))
+  default = {
+    "app" = {
+      tenant_id = "#{tenant_id}#"
+      sku       = "standard"
+    }
+  }
+}

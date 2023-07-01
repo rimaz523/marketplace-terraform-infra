@@ -25,3 +25,5 @@ variables:
   value: Consumption_0
 - name: api_domain_url
   value: "https://marketplace-dev-dotnet-api.azurewebsites.net"
+- name: tenant_id
+  value: "dd8e7948-f3de-4949-8fa8-cec81e0878d8"

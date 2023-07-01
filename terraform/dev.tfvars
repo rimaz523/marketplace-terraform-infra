@@ -45,3 +45,10 @@ apis = {
     service_url                = "https://marketplace-dev-dotnet-api.azurewebsites.net"
   }
 }
+
+key_vaults = {
+  "app" = {
+    tenant_id = "dd8e7948-f3de-4949-8fa8-cec81e0878d8"
+    sku       = "standard"
+  }
+}
