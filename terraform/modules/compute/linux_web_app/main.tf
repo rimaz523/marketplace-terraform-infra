@@ -18,6 +18,10 @@ resource "azurerm_linux_web_app" "webapp_linux" {
     }
   }
 
+  identity {
+    type = "SystemAssigned"
+  }
+
   lifecycle {
     ignore_changes = [
       app_settings
