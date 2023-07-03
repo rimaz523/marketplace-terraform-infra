@@ -213,7 +213,7 @@ variable "app_key_vault_rbac" {
     "app_kv_mkt_principal" = {
       "principal_id"                   = "#{devops_service_principal_id}#"
       "roles"                          = ["Owner", "Key Vault Secrets Officer"]
-      skip_service_principal_aad_check = true
+      skip_service_principal_aad_check = false
     }
     "app_kv_usr_rimaz" = {
       "principal_id"                   = "#{local_user_id}#"
