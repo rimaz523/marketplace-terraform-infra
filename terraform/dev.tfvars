@@ -52,3 +52,16 @@ key_vaults = {
     sku       = "standard"
   }
 }
+
+app_key_vault_rbac = {
+  "app_kv_mkt_principal" = {
+    "principal_id"                   = "52d46e72-ef8e-442a-b783-7d03b35dfe02"
+    "roles"                          = ["Owner", "Key Vault Secrets Officer"]
+    skip_service_principal_aad_check = false
+  }
+  "app_kv_usr_rimaz" = {
+    "principal_id"                   = "3207c7da-5eed-46eb-abd3-1deb49b95e1e"
+    "roles"                          = ["Owner", "Key Vault Secrets Officer"]
+    skip_service_principal_aad_check = false
+  }
+}

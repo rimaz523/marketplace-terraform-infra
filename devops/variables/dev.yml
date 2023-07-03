@@ -27,3 +27,7 @@ variables:
   value: "https://marketplace-dev-dotnet-api.azurewebsites.net"
 - name: tenant_id
   value: "dd8e7948-f3de-4949-8fa8-cec81e0878d8"
+- name: devops_service_principal_id
+  value: "52d46e72-ef8e-442a-b783-7d03b35dfe02"
+- name: local_user_id
+  value: "3207c7da-5eed-46eb-abd3-1deb49b95e1e"
