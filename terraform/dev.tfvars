@@ -58,10 +58,35 @@ app_key_vault_rbac = {
     "principal_id"                   = "52d46e72-ef8e-442a-b783-7d03b35dfe02"
     "roles"                          = ["Owner", "Key Vault Secrets Officer"]
     skip_service_principal_aad_check = false
+    is_managed_identity              = false
+    mi_key                           = ""
   }
   "app_kv_usr_rimaz" = {
     "principal_id"                   = "3207c7da-5eed-46eb-abd3-1deb49b95e1e"
     "roles"                          = ["Owner", "Key Vault Secrets Officer"]
     skip_service_principal_aad_check = false
+    is_managed_identity              = false
+    mi_key                           = ""
+  }
+  "app_kv_web_app_sami_api" = {
+    "principal_id"                   = ""
+    "roles"                          = ["Reader", "Key Vault Secrets Officer"]
+    skip_service_principal_aad_check = false
+    is_managed_identity              = true
+    mi_key                           = "api"
+  }
+  "app_kv_web_app_sami_react" = {
+    "principal_id"                   = ""
+    "roles"                          = ["Reader", "Key Vault Secrets Officer"]
+    skip_service_principal_aad_check = false
+    is_managed_identity              = true
+    mi_key                           = "vue"
+  }
+  "app_kv_web_app_sami_vue" = {
+    "principal_id"                   = ""
+    "roles"                          = ["Reader", "Key Vault Secrets Officer"]
+    skip_service_principal_aad_check = false
+    is_managed_identity              = true
+    mi_key                           = "react"
   }
 }
