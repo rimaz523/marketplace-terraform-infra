@@ -85,10 +85,11 @@ variable "web_app_ssl_domains" {
     ssl_state   = string
   }))
   default = {
-    "marketagora.com" = {
-      web_app_key = "react"
-      ssl_state   = "IpBasedEnabled"
-    },
+    # Temporarily remove IP based SSL to reduce costs
+    # "marketagora.com" = {
+    #   web_app_key = "react"
+    #   ssl_state   = "IpBasedEnabled"
+    # },
     "www.marketagora.com" = {
       web_app_key = "react"
       ssl_state   = "SniEnabled"
